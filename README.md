@@ -1,2 +1,6 @@
-# lessons-itis
-Corso di sistemi GNU/Linux all'ITIS
+# Docenze all'IIS Merloni Miliani
+
+Appunti di:
+
+* sistemi e reti
+* tecnologie e progettazione di sistemi
