@@ -1,7 +1,7 @@
 import socket
 import threading
 
-IP = "127.0.0.1"
+IP = "0.0.0.0"
 TCP_PORT = 3001
 my_addr_info = (IP, TCP_PORT)
 
