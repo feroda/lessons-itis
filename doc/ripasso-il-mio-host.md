@@ -1,5 +1,11 @@
 # Ripasso - Il mio host
 
+Pubblicato su: https://github.com/feroda/lessons-itis/ -> branch 5bi
+Riferimento diretto: https://github.com/feroda/lessons-itis/blob/5bi/doc/ripasso-il-mio-host.md
+
+Questo ripasso fa riferimento alla
+[sezione "Il mio host" nel programma](https://github.com/feroda/lessons-itis/blob/5bi/doc/programma.md)
+
 ## Setup di un host in una rete LAN
 
 Prima di tutto sapere qual è la rete. Sapere:
@@ -29,7 +35,7 @@ EVITO: oltre ad IP che già conosco su questa rete,
 
 TEST DI CONNESSIONE LAN: ping di un indirizzo IP sulla stessa rete.
 
-* Domanda: come posso vedere cosa accade sulla rete? 
+* Domanda: come posso vedere cosa accade sulla rete?
 * Risposta: con wireshark filtrando i pacchetti ICMP
 
 * Quali livelli del TCP/IP sto verificando la raggiungibilità LAN funziona?
@@ -87,7 +93,7 @@ Quindi posso cliccare su ogni livello dello stack TCP/IP e verificare come avvie
 
 Attenzione che wireshark aggiunge uno "pseudo-livello" chiamato "Frame". Questa astrazione è fatta solamente per dare informazioni sul pacchetto acquisito (ad esempio: quando wireshark ha acquisito quel pacchetto)
 
-Per il supporto di teoria vedere gli schemi nelle foto
+Per il supporto di teoria vedere lo schema: ![incapsulamento dei pacchetti](./incapsulamento-pacchetti.jpg)
 
 * Utente -> usa il software X che gli serve per ottenere una funzionalità.
 * X parla ad un livello APPLICAZIONE
@@ -112,90 +118,6 @@ La risposta verrà presa in carico dal SO e attraverserà lo stack TCP/IP
 ## Strumenti
 
 - su GNU/Linux usare il man
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
