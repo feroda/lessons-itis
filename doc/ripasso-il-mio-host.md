@@ -1,7 +1,7 @@
 # Ripasso - Il mio host
 
-Pubblicato su: https://github.com/feroda/lessons-itis/ -> branch 5bi
-Riferimento diretto: https://github.com/feroda/lessons-itis/blob/5bi/doc/ripasso-il-mio-host.md
+* Pubblicato su: https://github.com/feroda/lessons-itis/ -> branch 5bi
+* Riferimento diretto: https://github.com/feroda/lessons-itis/blob/5bi/doc/ripasso-il-mio-host.md
 
 Questo ripasso fa riferimento alla
 [sezione "Il mio host" nel programma](https://github.com/feroda/lessons-itis/blob/5bi/doc/programma.md)
