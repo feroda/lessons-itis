@@ -29,11 +29,19 @@ poiché la rete va da 34.4.0.0 a 34.4.255.255
 Visto che il 34.4.5.254 è già occupato non scelgo quello.
 Se ho problemi con il mio nuovo IP provo con un altro indirizzo IP perche' potrebbe averlo preso qualcun altro.
 
-EVITO: oltre ad IP che già conosco su questa rete,
-- L'indirizzo di BROADCAST: 34.4.255.255
-- L'indirizzo ip di rete: 34.4.0.0
+Evito di usare come IP:
+- L'IP che già conosco su questa rete
+- **L'indirizzo di broadcast**: 34.4.255.255
+- **L'indirizzo ip di rete**: 34.4.0.0
+
+Se l'indirizzo di rete viene individuato mettendo in AND l'indirizzo IP e la maschera di rete,
+l'indirizzo di broadcast viene individuato mettendo in OR la NEGAZIONE della maschera di rete.
 
 TEST DI CONNESSIONE LAN: ping di un indirizzo IP sulla stessa rete.
+
+Anche se ho impostato correttamente IP e netmask,
+il pericolo è che mi sia assegnato un IP già preso nella LAN,
+in questo caso potrei non ricevere i ping. Ne provo un altro.
 
 * Domanda: come posso vedere cosa accade sulla rete?
 * Risposta: con wireshark filtrando i pacchetti ICMP
