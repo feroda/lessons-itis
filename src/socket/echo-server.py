@@ -31,5 +31,5 @@ while True:
 
 print("Uscito dal while")
 t.join()
-sock.close()
 
+sock.close()
