@@ -1,21 +1,109 @@
 # Ripasso - Il mio host
 
-* Pubblicato su: https://github.com/feroda/lessons-itis/ -> branch 5bi
-* Riferimento diretto: https://github.com/feroda/lessons-itis/blob/5bi/doc/ripasso-il-mio-host.md
+* Pubblicato su: https://github.com/feroda/lessons-itis/ -> branch 4ais
+* Riferimento diretto: https://github.com/feroda/lessons-itis/blob/4ais/doc/ripasso-il-mio-host.md
 
 Questo ripasso fa riferimento alla
-[sezione "Il mio host" nel programma](https://github.com/feroda/lessons-itis/blob/5bi/doc/programma.md)
+[sezione "Il mio host" nel programma](https://github.com/feroda/lessons-itis/blob/4ais/doc/programma.md)
 
-## Setup di un host in una rete LAN
+## Dall'indirizzo IPv4 all'appartenenza di un IP ad una stessa rete
 
-Prima di tutto sapere qual è la rete. Sapere:
-* l'indirizzo IP di rete (o un altro indirizzo IP della rete)
-* maschera di rete
+### Indirizzo IP (versione 4)
+
+**Un indirizzo IPv4** (IP versione 4) è una stringa composta di 4 bytes nella forma A.B.C.D, ad esempio 172.16.23.50. I singoli numeri vengono chiamati "ottetti" proprio perché ogni byte è composto di 8 bit. In totale quindi un indirizzo IP è composto di 32 bit.
+
+Normalmente quando parliamo di **indirizzo IP** intendiamo l'identificativo di un host in una rete.
+
+Un host è un nodo della rete IP, sia esso un PC, un telefonino, un router, una scheda.
+
+### Maschera di rete ed indirizzo IP di rete
+
+Per capire se 2 IP appartengono alla stessa rete ho bisogno di trovare l'**indirizzo IP di rete** che posso trovare solo con la **maschera di rete** (subnet mask), che può essere espressa in forma estesa nella forma di un indirizzo IP (A.B.C.D).
+
+Le maschere di rete più comuni sono della forma:
+
+- a. 255.0.0.0
+- b. 255.255.0.0
+- c. 255.255.255.0
+
+Per ottenere quindi l'indirizzo IP di rete è necessario mettere in **AND bit a bit un indirizzo IP con una maschera di rete**.
+
+Ad esempio: qual è l'indirizzo IP di rete dell'IP 172.16.23.50 con maschera di rete 255.255.0.0?
+
+* 172 & 255 = 172
+* 16 & 255 = 16
+* 23 & 0 = 0
+* 50 & 0 = 0
+
+Le regole di comodo sono 2:
+
+* X & 255 = X
+* Y & 0 = 0
+
+Questo perché ogni componente è composta di 8 bit e se noi rappresentiamo ogni bit otteniamo:
+
+* 172 & 255 = 10101100 & 11111111 = 10101100 = 172
+* 16 & 0 = 00010000 & 11111111 = 00010000 = 16
+* 23 & 0 = 00010111 & 00000000 = 00000000 = 0
+* 50 & 0 = 00110010 & 00000000 = 00000000 = 0
+
+poiché ogni bit messo in AND con 1 restituisce 0 e ogni bit messo in AND con 0 restituisce 0.
+
+Quindi possiamo dire che l'host che ha:
+
+* indirizzo IP = 172.16.23.50
+* maschera di rete = 255.255.0.0
+
+appartiene alla rete 172.16.0.0, o se vogliamo, alla rete il cui indirizzo ip di rete è 172.16.0.0
+
+### Come verifico se 2 ip appartengono alla stessa rete?
+
+Innanzi tutto ho bisogno di:
+
+* 2 indirizzi IP (IP H1-IP, IP H2-IP) e
+* 2 maschere di rete (H1-NETMASK, H2-NETMASK).
+
+Poi eseguo l'operazione di AND bit a bit (nel caso di marchere semplici tipo quelle viste sopra non occorre che trasformo gli ottetti in sequenze di bit) e
+vedo se gli indirizzi IP di rete sono uguali.
+
+Ossia se H1-NETWORK = H2-NETWORK dove:
+
+* H1-NETWORK = H1-IP & H1-NETMASK
+* H2-NETWORK = H2-IP & H2-NETMASK
+
+**Se questo accade H1 e H2 sono sulla stessa rete**
 
 Esempio:
 
-- Un indirizzo IP della LAN: 34.4.5.254
-- Netmask: 255.255.0.0
+- H1. 172.16.23.50 & 255.255.0.0 = 172.16.0.0
+- H2. 172.16.3.12 & 255.255.255.0 = 172.16.3.0
+- H3. 172.16.250.30 & 255.255.0.0 = 172.16.0.0
+- H4. 10.18.34.34 & 255.255.0.0 = 10.18.0.0
+
+**H1 è sulla stessa rete di H3** quindi possono comunicare direttamente.
+Gli altri non comunicano con nessun altro.
+
+## Configurazione di un host in una rete LAN
+
+La configurazione di un host in una stessa rete fisica può essere fatta impostando esclusivamente:
+
+1. indirizzo IP
+2. maschera di rete
+
+Se ho l'esigenza di configurare un host H1 nella stessa rete dove c'è già un host preesistente H2, prima di tutto ho bisogno di individuare la rete e quindi sapere:
+
+* l'indirizzo IP di rete e la
+* maschera di rete
+
+che è equivalente a dire che devo sapere:
+
+* l'indirizzo IP dell'host H2
+* la maschera di rete dell'host H2
+
+Esempio da:
+
+- Indirizzo IP di H2: 34.4.5.254
+- Maschera di rete di H2: 255.255.0.0
 
 ne consegue:
 
@@ -23,33 +111,47 @@ ne consegue:
 
 per mettere un host su questa rete posso prendere un indirizzo IP a scelta tra:
 
-34.4.0.1 e 34.4.255.254
+**34.4.0.1 e 34.4.255.254**
 poiché la rete va da 34.4.0.0 a 34.4.255.255
 
-Visto che il 34.4.5.254 è già occupato non scelgo quello.
-Se ho problemi con il mio nuovo IP provo con un altro indirizzo IP perche' potrebbe averlo preso qualcun altro.
+Visto che il 34.4.5.254 è già occupato da H2 NON scelgo quello.
 
-Evito di usare come IP:
+(NOTA: se ho problemi con il mio nuovo IP provo con un altro indirizzo IP perche' potrebbe averlo preso qualcun altro)
+
+Evito quindi di usare come IP:
 - L'IP che già conosco su questa rete
 - **L'indirizzo di broadcast**: 34.4.255.255
 - **L'indirizzo ip di rete**: 34.4.0.0
 
-Se l'indirizzo di rete viene individuato mettendo in AND l'indirizzo IP e la maschera di rete,
-l'indirizzo di broadcast viene individuato mettendo in OR la NEGAZIONE della maschera di rete.
+NOTA sull'indirizzo di broadcast (non necessario per la verifica del 29 novembre):
+se l'indirizzo di rete viene individuato mettendo in AND l'indirizzo IP e la maschera di rete,
+**l'indirizzo di broadcast viene individuato mettendo in OR la NEGAZIONE della maschera di rete**.
 
-TEST DI CONNESSIONE LAN: ping di un indirizzo IP sulla stessa rete.
+### visualizzazione della configurazione di rete
 
-Anche se ho impostato correttamente IP e netmask,
-il pericolo è che mi sia assegnato un IP già preso nella LAN,
-in questo caso potrei non ricevere i ping. Ne provo un altro.
+Domanda: come posso visualizzare se in un dato momento il mio host ha la configurazione di rete che io mi aspetto?
+Risposta: ogni sistema operativo offre la possibilità di visualizzare la configurazione della rete. Nelle "informazioni sulla connessione". Questa si può raggiungere da interfaccia grafica sia su Ubuntu che su Windows, e da terminale.
 
-* Domanda: come posso vedere cosa accade sulla rete?
-* Risposta: con wireshark filtrando i pacchetti ICMP
+Da terminale su Ubuntu ci sono i comandi
 
-* Quali livelli del TCP/IP sto verificando la raggiungibilità LAN funziona?
-* Questi 2 ip appartengono alla stessa rete?
+* `ifconfig`
+* `ip addr list`
 
-* PLUS: Quali sarebbero i limiti della rete se la subnet mask fosse 255.255.128.0 ?
+per mostrare la configurazione di rete
+
+Da terminale su Windows c'è il comando
+
+* `ipconfig`
+
+di solito invocato con il parametro `/all`
+
+* `ipconfig /all`
+
+### test della configurazione di rete locale
+
+Il test della configurazione corretta della rete locale lo posso fare con
+
+`ping H2` ossia il ping **ad un indirizzo della mia stessa rete**
 
 ## Uscire dalla rete con il default gateway
 
@@ -57,7 +159,7 @@ Ora che ho connesso il mio host nella rete voglio che raggiunga altre reti e in 
 
 Per fare questo imposto il parametro **default gateway**.
 
-Il default gateway identifica la macchina a cui il mio host invia i pacchetti se non sa a chi inviarli (se su reti che non conosce = se su reti non presenti nella sua tabella di routing)
+Il default gateway identifica la macchina a cui il mio host invia i pacchetti se non sa a chi inviarli (possiamo dire anche "se su reti che il mio host non conosce" o "se su reti non presenti nella tabella di routing del mio host")
 
 Il test che il gateway funziona lo faccio con `ping` ad un indirizzo esterno (ad es: 89.97.132.192)
 
@@ -85,19 +187,17 @@ TEST:
 Come verifico se ho interrogato il DNS?
 Con un analizzatore di traffico di rete... quale sarà mai?
 
-## definizione di una subnet e appartenenza di un IP ad una subnet
-
-già verificato nel punto 1 del ripasso.
-
-Se metto in AND bit a bit 2 indirizzi IP con le rispettive subnet mask e ottengo lo stesso indirizzo IP => i 2 IP sono sulla stessa rete.
-
 ## incapsulamento dei pacchetti sulla rete - caratteristiche di ogni livello del TCP/IP
 
-Con wireshark se seleziono un pacchetto a caso, vedo in fondo i byte che lo compongono.
+Posso avviare l'analizzatore di rete wireshark con `sudo wireshark`, selezionare una interfaccia di rete con cui catturare i pacchetti e poi avviare l'acquisizione.
 
-Se clicco nella parte centrale del programma si evidenziano nella parte sottostante i byte coinvolti.
+Il programma è diviso in 3 riquadri.
 
-Quindi posso cliccare su ogni livello dello stack TCP/IP e verificare come avviene l'incapsulamento (o imbustamento) di un pacchetto.
+* Nel primo in alto vedo la lista dei pacchetti acquisiti
+* Se seleziono un pacchetto a caso, vedo in fondo (terzo riquadro) i byte che lo compongono
+* Se clicco nella parte centrale del programma **si evidenziano** nella parte sottostante (ossia sempre il terzo riquadro) i byte coinvolti.
+
+Quindi posso cliccare su ogni livello dello stack TCP/IP (riquadro centrale) e verificare come avviene l'incapsulamento (o imbustamento) di un pacchetto.
 
 Attenzione che wireshark aggiunge uno "pseudo-livello" chiamato "Frame". Questa astrazione è fatta solamente per dare informazioni sul pacchetto acquisito (ad esempio: quando wireshark ha acquisito quel pacchetto)
 
@@ -122,54 +222,4 @@ Il messaggio viaggia sulla rete
   * risponde
 
 La risposta verrà presa in carico dal SO e attraverserà lo stack TCP/IP
-
-## Strumenti
-
-- su GNU/Linux usare il man
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
