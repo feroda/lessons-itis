@@ -1,2 +1,9 @@
-Il programma che trovate qui e' per il 5o anno, la mattina.
+Il programma lo potete vedere all'indirizzo:
+
+https://github.com/feroda/lessons-itis/blob/4ais/doc/programma.md
+
+Il contenuto è studiabile su
+
+https://github.com/feroda/lessons-itis/blob/4ais/doc/ripasso-il-mio-host.md
+
 Il vostro e' ristretto. Se ce la faccio ne preparo una versione piu' breve.
