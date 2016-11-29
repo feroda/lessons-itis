@@ -6,4 +6,4 @@ Il contenuto è studiabile su
 
 https://github.com/feroda/lessons-itis/blob/4ais/doc/ripasso-il-mio-host.md
 
-Il vostro e' ristretto. Se ce la faccio ne preparo una versione piu' breve.
+
