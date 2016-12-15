@@ -9,6 +9,8 @@ public class ServerBiglietto
 		Socket connessione;
 		int porta = 3333;
 		int n = 1;
+		byte[] ipAddr = new byte[]{127, 0, 0, 1};
+		InetAddress bindIp = InetAddress.getByAddress(ipAddr);
 
 		//Stream per gestire il flusso in output
 		OutputStream out;
@@ -16,7 +18,7 @@ public class ServerBiglietto
 
 		try
 		{
-			sSocket = new ServerSocket(porta);
+			sSocket = new ServerSocket(porta, 10, bindIp);
 			while(true)
 			{
 				System.out.println("In attesa di connessioni...");

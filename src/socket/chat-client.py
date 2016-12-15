@@ -1,24 +1,19 @@
 import socket
 
 IP_DST = "127.0.0.1"
-TCP_DST_PORT = 3001
-
-FRASE = "ciao mamma"
-
+TCP_DST_PORT = 3333
 addr_info = (IP_DST, TCP_DST_PORT)
 
+# CREATE
 sock = socket.socket()
-sock.connect(addr_info)
-while True:
-    FRASE = raw_input("scrivi > ")
-    if FRASE:
-        sock.sendall(FRASE)
-        print("Ho scritto: %s" % FRASE)
-        data = sock.recv(8192)
-        print("Ho ricevuto: %s" % data)
-    else:
-        print("Niente da dire, esco")
-        break
 
+# CONNECT
+sock.connect(addr_info)
+
+# RECEVIVE
+data = sock.recv(8192)
+print("Ho ricevuto: %s" % data)
+
+# CLOSE
 sock.close()
 
