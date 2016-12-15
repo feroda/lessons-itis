@@ -10,7 +10,13 @@ public class ServerBiglietto
 		int porta = 3333;
 		int n = 1;
 		byte[] ipAddr = new byte[]{127, 0, 0, 1};
-		InetAddress bindIp = InetAddress.getByAddress(ipAddr);
+        InetAddress bindIp = null;
+
+        try {
+            bindIp = InetAddress.getByAddress(ipAddr);
+        } catch (UnknownHostException e) {
+            System.err.println(e);
+        }
 
 		//Stream per gestire il flusso in output
 		OutputStream out;
