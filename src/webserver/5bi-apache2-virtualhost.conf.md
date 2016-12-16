@@ -27,7 +27,7 @@
 ### Verificare con telnet. Ad esempio
 
 ```
-# telnet 10.2.29.10
+# telnet 10.2.29.10 80
 
 GET / HTTP/1.1
 Host: 5bi.prova-cesari.it
@@ -36,7 +36,7 @@ Host: 5bi.prova-cesari.it
 Risposta
 
 ```
-HTTP/1.1 200 OK                                                               [0/18]
+HTTP/1.1 200 OK
 Date: Fri, 16 Dec 2016 08:52:38 GMT
 Server: Apache/2.4.12 (Ubuntu)
 Last-Modified: Fri, 16 Dec 2016 08:44:04 GMT
