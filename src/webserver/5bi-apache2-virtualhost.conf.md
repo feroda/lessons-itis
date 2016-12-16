@@ -15,8 +15,10 @@
 </VirtualHost>
 ```
 
-### Suggerimenti
+### Appunti
 
+* I virtualhost disponibili su Debian (e quindi anche Ubuntu) sono situati in `/etc/apache2/sites-available/`
+* I virtualhost abilitati sono situati in `/etc/apache2/sites-enabled/`
 * Disabilitare il virtualhost di default: `sudo a2dissite 000-default`
 * Abilitare un virtualhost: `sudo a2ensite 5bi`
 * Riavviare il server web `systemctl reload apache2` o `service apache2 reload`
