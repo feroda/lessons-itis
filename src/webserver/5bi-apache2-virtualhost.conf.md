@@ -22,5 +22,42 @@
 * Riavviare il server web `systemctl reload apache2` o `service apache2 reload`
 * Per creare una directory `sudo mkdir /var/www/5bi/`
 * Bisogna creare un file `/var/www/5bi/index.html` con un contenuto a piacimento
+* Aggiungere un nome host a piacere nel file `/etc/hosts`
+
+### Verificare con telnet. Ad esempio
+
+```
+# telnet 10.2.29.10
+
+GET / HTTP/1.1
+Host: 5bi.prova-cesari.it
+```
+
+Risposta
+
+```
+HTTP/1.1 200 OK                                                               [0/18]
+Date: Fri, 16 Dec 2016 08:52:38 GMT
+Server: Apache/2.4.12 (Ubuntu)
+Last-Modified: Fri, 16 Dec 2016 08:44:04 GMT
+ETag: "61-543c29280e6dc"
+Accept-Ranges: bytes
+Content-Length: 97
+Vary: Accept-Encoding
+Content-Type: text/html
+
+<HTML>
+
+<HEAD>
+    <TITLE>PROVA</TITLE>
+</HEAD>
+
+<BODY>
+    CIAOOOOOOOOOOOOOOO
+</BODY>
+</HTML>
+```
+
+
 
 
