@@ -19,10 +19,12 @@ public class ClientBiglietto
 		{
 			connessione = new Socket(server, porta);
 			System.out.println("Connessione aperta.");
-			in = connessione.getInputStream();
+
 			// Inizializza lo stream di input
+			in = connessione.getInputStream();
             input = new InputStreamReader(in);
 			sIN = new BufferedReader(input);
+
 			// Riceve i dati dal server
 			String num = sIN.readLine();
 			System.out.println("Il tuo numero e': " + num);
