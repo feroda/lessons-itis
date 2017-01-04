@@ -37,18 +37,28 @@ def do_echo_all(conn, addr_info):
     Receive a message and echoes to all connected clients.
     """
 
-    add_conn(conn)
+    # my_conn_info holds a list with 3 elements:
+    # conn -> the connection object
+    # addr_info -> (ip, port) tuple
+    # user -> the username if has been specified
+    my_conn_info = [conn, addr_info, ""]
+    add_conn(my_conn_info)
+
     while True:
         data = conn.recv(8192)
         if data:
-            msg = "%s ha inviato> %s" % (addr_info, data)
+            sender = my_conn_info[2] or my_conn_info[1]
+            msg = "%s ha inviato> %s" % (sender, data)
             print(msg)
-            for c in all_connections:
-                c.sendall(data)
+            if data.startswith("USER "):
+                my_conn_info[2] = data[len("USER "):]
+
+            for every_conn_info in all_connections:
+                every_conn_info[0].sendall(msg)
         else:
             print("Nessun dato ricevuto, chiudo tutto")
             break
-    remove_conn(conn)
+    remove_conn(my_conn_info)
     conn.close()
 
 
@@ -56,11 +66,12 @@ def main():
     sock = socket.socket()
     sock.bind(my_addr_info)
     sock.listen(50)
+
     try:
         while True:
-            print("accetto")
+            print("accetto connessioni...")
             conn, addr_info = sock.accept()
-            print("accettato")
+            print("connessione accettata")
             t = threading.Thread(target=do_echo_all, args=(conn, addr_info))
             t.start()
 
@@ -68,9 +79,9 @@ def main():
         t.join()
     except Exception as e:
         print("Eccezione: %s" % e)
-        for c in all_connections:
+        for every_conn_info in all_connections:
             try:
-                c.close()
+                every_conn_info[0].close()
             except:
                 pass
 
