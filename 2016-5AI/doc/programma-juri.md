@@ -15,7 +15,7 @@
 
 1. Connettere 2 portatili scollegati, e fare ping da uno verso l'altro
 
-2. Disabilitare DHCP sul router e configurare gli host in modo tale da poter raggiungere con il browser http://www.google.itis
+2. Disabilitare DHCP sul router e configurare gli host in modo tale da poter raggiungere con il browser http://www.google.it
 
 ## Esercizio tencologie
 
