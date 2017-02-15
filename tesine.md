@@ -5,6 +5,8 @@
 * Migrazione di server GNU/Linux: P2V, da vecchia distro ad una nuova
 * Soluzioni per la virtualizzazione
 * Gestione di piu' reti con VLAN
+* ARPs -> ARP crittografato a chiave pubblica
+* Realizzare un bot Telegram per la chat di classe...ad esempio
 
 ## Cisco PT dummy
 
