@@ -48,4 +48,4 @@ ok
 
 #### PROSSIMO PASSO
 
-Modifica il file es_longoni.pkt seguendo le indicazioni sopra.
+Modifica il file .pkt seguendo le indicazioni sopra.
