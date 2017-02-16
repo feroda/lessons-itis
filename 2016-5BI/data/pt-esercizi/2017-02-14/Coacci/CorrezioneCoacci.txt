@@ -1,0 +1,44 @@
+### CORREZIONE - Coacci
+
+
+#### Router
+
+Alle interfacce di rete hai assegnato degli IP non appartenenti alle rispettive reti perché?
+Hai messo:
+
+* per la reteA: 160.40.80.254/24
+* per la reteB: 120.60.30.254/16
+* per la reteC: 180.70.60.254/24
+* per la reteD: 8.8.8.254/8
+
+Ok, mi pare di aver capito che hai usato IP a piacere. Mi va bene.
+
+Ma se vuoi usare gli ultimi indirizzi della rete devi mettere:
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.255.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.255.255.254/8
+
+sai calcolare l'indirizzo di broadcast delle reti? Se sì calcolalo, se no cerca come fare (tipo sul libro di sistemi), se non riesci chiedimelo.
+
+#### Rete A e ReteB
+
+ok
+
+#### Rete C 
+
+Bravo ad aver impostato il pool di indirizzi, ma dovevi impostarlo come serverPool. O meglio ci dovrebbe essere un solo pool di indirizzi. Per questo gli host non acquisiscono correttamente gli indirizzi.
+
+Ma sembra che tu volontariamente abbia messo 2 pool... infatti il range serverPool è sul range di quegli host assegnati staticamente. Perché hai messo 2 reti IP in una?
+
+#### Rete D 
+
+perché hai usato lo switch? Funziona ugualmente, me è inutile dato che sono solo 2 host.
+
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+
+#### PROSSIMO PASSO
+
+Modifica l'esercizio seguendo le indicazioni

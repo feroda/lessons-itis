@@ -1,0 +1,39 @@
+### CORREZIONE - Nigro
+
+
+#### Router(s)
+
+Errore pesante dei 3 router collegati sia al router di centro stella, sia al router della rete D,
+come mai li hai messi?
+
+Forse ti risultava difficile trovare un router con 4 porte ethernet e per questo nei hai preso
+uno configurando cose strane tipo il VirtualPortGroup... Un router con 4 porte FastEthernet di livello 3 è i Generic, oppure il 2811 cui aggiungere un modulo NM-2FE2W.
+
+Ma poi quali indirizzi ti sei inventato per il router di centro stella (quello centrale)?
+Inoltre sugli altri router hai configurato un solo IP. Mi manca qualche pezzo di logica.
+
+#### Rete A 
+
+ok
+
+#### Rete B
+
+ok, ma se vuoi usare l'ultimo IP della rete come router (unico!) è 172.204.255.254 ... sai calcolare gli indirizzi di broadcast delle reti A,B,C,D? se si calcolali, se no cerca come si fa (anche sul libro di sistemi) se no chiedimelo.
+
+#### Rete C 
+
+il server DHCP non ha indirizzo IP e netmask e gateway configurati!
+Inoltre bravo ad aver impostato il pool di indirizzi, ma il maximum number of users (client nel caso del DHCP) deve essere 220 come da esercizio.
+
+Bravo ad aver messo icone diverse per la rete, ma nota: tra i pc fissi e i laptop di solito sono questi ultimi ad avere un IP dinamico.
+
+#### Rete D 
+
+ok
+
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+
+#### PROSSIMO PASSO
+
+Modifica l'esercizio seguendo le indicazioni

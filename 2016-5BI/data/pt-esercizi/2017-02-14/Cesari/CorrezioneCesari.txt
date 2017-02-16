@@ -1,0 +1,58 @@
+### CORREZIONE - Cesari
+
+#### Router
+
+Hai messo:
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.0.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.8.8.254/8
+
+se vuoi usare gli ultimi indirizzi della rete devi mettere
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.255.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.255.255.254/8
+
+sai calcolare l'indirizzo di broadcast delle reti? Se sì calcolalo, se no cerca come fare (tipo sul libro di sistemi), se non riesci chiedimelo.
+
+Il problema dei 2 link che non si accendono è nella particolarità delle porte FastEthernet
+che sono per la console e aux. Bisogna aggiungere un modulo di 2 fastethernet al router tipo
+2 moduli NM-1-CFE.
+
+
+#### reteA e reteB
+
+ok
+
+#### reteC
+
+buona la configurazione del pool DHCP, ma purtroppo ne hai aggiunto uno invece di riconfigurare il vecchio. Dovresti eliminare il pool che hai creato e modificare la configurazione di serverPool e poi fare "Save" invece di "Add"
+
+#### reteD
+
+Perché hai messo lo switch? Non è necessario dato che sono solo 2 gli host di quella rete.
+
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+
+Il problema è nella reteD che deve essere una rete composta solo dal router con IP 8.8.8.8
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+Quindi il router centrale deve avere un'altra interfaccia di rete con IP 8.0.0.1 (seguendo
+la tua convenzione)
+
+Tieni presente che la convenzione diffusa e presentata nel libro è di assegnare l'ultimo IP
+della rete al router. Quali sarebbero quindi?
+
+Il resto è OK
+
+#### PROPOSTA DNS (se vuoi)
+
+Perché al server non fargli fare anche da server DNS? Abilitare il servizio DNS e definire record di tipo A. Il nome è il nome che vuoi far risolvere dal DNS (pensa solo ad un hostname senza nome di dominio). Nel campo address ci metti l'indirizzo IP. Poter identificare gli host per nome è di certo una comodità. 
+
+Per verificare che le impostazioni del server, e di (almeno) un host funzionino, vai su quell'host e scrivi ping reteA-1 dove reteA-1 era un hostname definito nel dns.
+
+

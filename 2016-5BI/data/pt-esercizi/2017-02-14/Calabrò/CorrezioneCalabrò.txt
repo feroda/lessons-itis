@@ -1,0 +1,51 @@
+### CORREZIONE - Calabrò  (v. Longoni e Cardoni)
+
+#### Router
+
+Il router ha tutte le interfacce di rete DOWN. Non hai abilitato il livello fisico ;)
+Il router cisco da command line (CLI) hanno il comando "no shutdown" quando si desidera attivare
+una porta (fisica, non c'entra con la porta TCP ovviamente). Da interfaccia grafica c'è
+da cliccare su "On" vicino a "Port status".
+
+Inoltre come indirizzi IP ho notato un problema... anche se non pregiudica il funzionamento
+del ping. Hai messo:
+
+* per la reteA: 192.168.99.250/24
+* per la reteB: 172.204.0.253/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.8.8.254/24
+
+er la reteD la netmask è una /8 (= 255.0.0.0), poi se vuoi usare gli ultimi indirizzi della rete
+devi mettere
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.255.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.255.255.254/8
+
+sai calcolare l'indirizzo di broadcast delle reti? Se sì calcolalo, se no cerca come fare (tipo sul libro di sistemi), se non riesci chiedimelo.
+
+mmm.... stesse impostazioni di Longoni e Cardoni... chi me lo spiega?
+
+#### Rete D
+
+Perché hai messo lo switch? Non è necessario dato che sono solo 2 gli host di quella rete.
+
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+#### Rete C
+
+Sei caduto nella trappola, un host statico è il server DHCP.
+L'errore grave invece è aver configurato staticamente il server ma non avergli assegnato
+indirizzo IP, maschera di rete e gateway
+
+Un altro errore è stato di non aver avviato il servizio DHCP. Ma ti funziona? Gli host che sono
+configurati come client DHCP inviano richieste, ma nessuno gli risponde. Non l'hai abilitato e non hai configurato il pool degli indirizzi in modo appropriato in Services -> DHCP.
+
+#### Rete A e Rete B
+
+ok
+
+#### PROSSIMO PASSO
+
+Modifica il file es_longoni.pkt seguendo le indicazioni sopra.

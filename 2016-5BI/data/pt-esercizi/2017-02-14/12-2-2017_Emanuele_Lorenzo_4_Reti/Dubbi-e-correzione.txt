@@ -1,0 +1,37 @@
+1-se utilizzo uno switch secondario per gli 
+  host della rete (172.204.0.0). Non riesco a collegarmi
+  sull'interfaccia (FastEthernet0/0 quindi 8.8.8.8) perchè
+  occupata dall'altro switch che connette gli host della rete (192.168.99.0).
+
+### CORREZIONE
+
+**Il problema principale** dell'esercizio svolto è che tu hai usato
+uno switch per connettere le 4 reti (A,B,C,D). Per definizione è il router l'apparato
+che consente di collegare diverse reti IP (o "a livello IP").
+
+Quindi avresti dovuto usare un router con 4 interfacce *Ethernet.
+
+Tale router, che possiamo chiamare CentroStella ha 4 IP, uno per interfaccia,
+che si affacciano sulle diverse reti:
+
+  * su reteA: 192.168.99.254
+  * su reteB: 172.204.255.254
+  * su reteC: 200.200.30.254
+  * su reteD: 8.255.255.254
+
+Per convenzione gli IP del router sono gli ultimi della rete su cui è situata l'interfaccia
+di rete corrispondente.
+
+Ovviamente tutti gli host avranno (staticamente o via DHCP) impostato come gateway l'IP corrispondente nel router.
+
+#### CORREZIONE MINORE
+
+Nella rete B devi mettere 3 host configurati staticamente di cui uno è il server DHCP.
+
+#### RIGUARDO AL DUBBIO
+
+Dopo la mia spiegazione è ancora valido il tuo dubbio? Se sì, aiutami a capirlo.
+
+#### PROSSIMO PASSO
+
+Copia l'esercizio con un nome di file che ti ricorda sia la prima versione (metti v1-12-02-2017_Emanuele_Lorenzo_4_Reti.pkt) e modifica il file 12-02-2017_Emanuele_Lorenzo_4_Reti.pkt seguendo le indicazioni

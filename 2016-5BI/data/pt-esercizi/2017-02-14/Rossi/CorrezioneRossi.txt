@@ -1,0 +1,49 @@
+### CORREZIONE - Rossi
+
+#### Router
+
+Come indirizzi IP/netmask del router hai messo:
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.0.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.8.8.254/8
+
+se vuoi usare gli ultimi IP della rete devi considerare la netmask. Sono:
+
+* per la reteA: 192.168.99.254/24
+* per la reteB: 172.204.255.254/16
+* per la reteC: 200.200.30.254/24
+* per la reteD: 8.255.255.254/8
+
+come vedi il tuo metodo funziona per la classe C (24 bit) e non per le altre.
+
+sai calcolare l'indirizzo di broadcast delle reti? Se sì calcolalo, se no cerca come fare (tipo sul libro di sistemi), se non riesci chiedimelo.
+
+#### ReteA e ReteB
+
+La rete A è completamente errata per gli IP sugli host. Essi devono essere della forma
+192.168.99.x ... perché sei andato sul 10.2.19.x? questo me lo dovrai spiegare...
+
+Per la ReteB stesso errore e questo mi conferma che non è una svista, ma un metodo errato.
+
+#### ReteC
+
+Il server DHCP ha un IP statico e compatibile alla rete... mi sono quasi commosso!
+Però hai 2 pool. Ne devi avere solo uno. Inoltre 512 utenti massimo (si intende 512 client), ma la configurazione messa è per una /24 (giustamente) che consente max 254 hosts. Quindi come la mettiamo? Avresti dovuto restringere il valore a 220.
+
+Per gli host statici sei caduto nella trappola (nella tua rete gli host statici sono 4 se conti anche il server DHCP ;)) e poi ... mi raccomando eh... sempre su un range diverso da quello della
+rete altrimenti forse funzionerebbe qualcosa....!
+
+Ciò mi fa anche capire che non hai provato a fare il ping.
+Confido che l'esercizio sia utile e che gli errori di base siano risolti.
+
+#### ReteD
+
+Per la reteD non occorre in realtà lo switch tanto devi connettere 2 soli apparati...
+
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+#### PROSSIMO PASSO
+
+Modifica il file seguendo le indicazioni

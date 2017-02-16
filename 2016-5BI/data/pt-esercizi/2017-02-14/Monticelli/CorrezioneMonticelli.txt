@@ -1,0 +1,20 @@
+### CORREZIONE - Monticelli
+
+Il problema è nella reteD che deve essere una rete composta solo dal router con IP 8.8.8.8
+NOTA: Sul router 8.8.8.8 inoltre si dovrà popolare la tabella di routing, ma per quella puoi anche aspettare che ne parliamo in classe
+
+Quindi il router centrale deve avere un'altra interfaccia di rete con IP 8.0.0.1 (seguendo
+la tua convenzione)
+
+Tieni presente che la convenzione diffusa e presentata nel libro è di assegnare l'ultimo IP
+della rete al router. Quali sarebbero quindi?
+
+Il resto è OK
+
+#### PROPOSTA DNS (se vuoi)
+
+Perché al server non fargli fare anche da server DNS? Abilitare il servizio DNS e definire record di tipo A. Il nome è il nome che vuoi far risolvere dal DNS (pensa solo ad un hostname senza nome di dominio). Nel campo address ci metti l'indirizzo IP. Poter identificare gli host per nome è di certo una comodità. 
+
+Per verificare che le impostazioni del server, e di (almeno) un host funzionino, vai su quell'host e scrivi ping reteA-1 dove reteA-1 era un hostname definito nel dns.
+
+
