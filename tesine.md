@@ -1,5 +1,7 @@
-* SPID
-* Biblioteca scolastica con NFC + DB + APP
+* SPID -
+* Gestione di una biblioteca scolastica con NFC + DB + APP:
+  * dalla biblioteca di Alessandria alla biblioteca multimediale
+  * tecniche di classificazione documentale/bibliotecaria
 * V4Vendemmia operativo
 * Cisco Packet Tracer Web Clone
 * Migrazione di server GNU/Linux: P2V, da vecchia distro ad una nuova
