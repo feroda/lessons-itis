@@ -1,0 +1,3 @@
+Copia la chiave ssh su tutti i PC inseriti nel file teamusers.txt
+
+t=team; for n in `seq 4`; do team=$t$n; grep $team teamusers.txt | cut -d' ' -f3 | while read ip; do ssh-copy-id -i ~/.ssh/id_rsa.pub $team@$ip; done; done
