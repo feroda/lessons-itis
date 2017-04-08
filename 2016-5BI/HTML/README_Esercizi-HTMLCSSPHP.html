@@ -1,0 +1,81 @@
+<h1 id="esercizi-htmlphp-per-pasqua">Esercizi HTML/PHP per Pasqua</h1>
+
+<p>Ci sono 3 esercizi da svolgere. Il primo è per tutti. <br>
+Chi si ferma qui dovrà cercare di realizzare un sito gradevole e abbastanza completo. <br>
+Chi prosegue potrà risolvere il primo in modo minimale, quindi rispettando <br>
+al minimo i requisiti richiesti.</p>
+
+
+
+<h2 id="realizzare-il-proprio-sito-statico">Realizzare il proprio sito statico</h2>
+
+<p>Per tutti:</p>
+
+<p>Utilizzando HTML + CSS basandosi sul template (modello) <br>
+<code>primobootstrap-prof.html</code> realizzare una propria pagina web <br>
+statica. Il sito deve contenere:</p>
+
+<ul>
+<li>un’immagine,</li>
+<li>alcune informazioni testuali,</li>
+<li>un elenco non ordinato</li>
+<li>almeno un link a URL esterni al sito stesso</li>
+</ul>
+
+<p>Il sito è composto da almeno 3 pagine: index.html, about.html, contact.html</p>
+
+<p>Come detto, chi non prosegue verso gli esercizi successivi perché non <br>
+sufficientemente approfondito in classe, dedichi più tempo <br>
+a questo esercizio. Arricchisca come vuole. Chi effettua invece i <br>
+successivi può fare il sito di 2 pagine ed inserire frettolosamente <br>
+gli elementi richiesti.</p>
+
+<h2 id="creare-una-form-html-che-interagisca-con-php">Creare una FORM html che interagisca con PHP</h2>
+
+
+
+<h3 id="la-form-html">La form HTML</h3>
+
+<p>Integrare nella pagina contact.html la form html:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"pagepc.php"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"GET"</span>&gt;</span>
+  Inserisci il nome: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"textbox"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"n"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Commento: <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"comment"</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"10"</span> <span class="hljs-attribute">cols</span>=<span class="hljs-value">"30"</span>&gt;</span>
+    Inserire qui il tuo commento
+  <span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre>
+
+<p>Per spiegazioni sugli elementi della form vedere <a href="https://www.w3schools.com/html/html_form_elements.asp">https://www.w3schools.com/html/html_form_elements.asp</a></p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+  <span class="hljs-variable">$nome</span>=<span class="hljs-variable">$_GET</span>[<span class="hljs-string">"n"</span>];
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"Ciao "</span>.<span class="hljs-variable">$nome</span>;
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"Il tuo commento è stato ricevuto"</span>;
+<span class="hljs-preprocessor">?&gt;</span></span></code></pre>
+
+<p>recuperare e visualizzare anche il contenuto del commento.</p>
+
+
+
+<h3 id="deploy-sul-webserver">Deploy sul webserver</h3>
+
+<p>Effettuare il deploy (il rilascio) del sito (files html+php) sul proprio webserver.</p>
+
+
+
+<h2 id="effettuare-la-richiesta-della-form-tramite-post">Effettuare la richiesta della form tramite POST</h2>
+
+<p>L’attributo <code>method</code> del tag <code>form</code> (reference su <a href="https://www.w3schools.com/tags/tag_form.asp">https://www.w3schools.com/tags/tag_form.asp</a>) può assumere come valore <br>
+GET o POST.</p>
+
+<p>Sostituendo negli estratti qui sopra GET a POST si ottiene lo stesso risultato, <br>
+ma cosa è cambiato? Se i parametri non sono più stati messi nell’URL, dove sono stati messi?</p>
+
+<p>Aprire gli strumenti di sviluppo del browser per risolvere il dilemma.</p>
+
+<hr>
