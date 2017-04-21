@@ -1,9 +1,21 @@
 <?php
   require "header.php";
+
+  if (!empty($_POST)) {
+
+    $nome=$_POST["ilnome"];
+    $commento=$_POST["ilcommento"];
+    echo "<p>";
+    echo nl2br("Ciao ".$nome."\n");
+    echo nl2br("Il tuo commento è stato ricevuto:\n");
+    echo $commento;
+    echo "</p>";
+    echo '<p>Grazie per avermi contattato, ora <a href="index.php">torna alla home</a>!</p>';
+  } else {
 ?>
 
       <h1>Form per i contatti</h1>
-      <form action="pagepc.php" method="POST">
+      <form method="POST">
         <fieldset class="form-group">
           <label for="the-name">Name</label>
           <input type="text" class="form-control" id="the-name" name="ilnome" placeholder="Enter name">
@@ -23,5 +35,6 @@
     </div><!-- /.container -->
 
 <?php
+  }; // fine ramo else della pagina con $_POST vuoto
   require "footer.php";
 ?>
