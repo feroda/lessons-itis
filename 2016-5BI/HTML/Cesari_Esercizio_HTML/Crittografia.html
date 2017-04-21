@@ -24,13 +24,17 @@ https://atom.io/packages/atom-bootstrap4 -->
 
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <a class="navbar-brand grande" href="Crittografia_Simmetrica.html">SIMMETRICA</a>
+      <a class="navbar-brand grande" href="Crittografia.html">Crittografia</a>
       <ul class="nav nav-pills">
         <li class="nav-item active">
-          <a class="navbar-brand grande" href="Crittografia_Asimmetrica.html">ASIMMETRICA</a>
-          <ul class="nav nav-pills">
-            <li class="nav-item active">
-
+          <a class="nav-link" href="Crittografia_Simmetrica.html">SIMMETRICA <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Crittografia_Asimmetrica.html">ASIMMETRICA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
       </ul>
     </nav>
 
@@ -39,11 +43,12 @@ https://atom.io/packages/atom-bootstrap4 -->
       <div class="starter-template">
         <h1 class="rosso">LA CRITTOGRAFIA</h1>
         <p class="lead grande">La crittografia (dall'unione di due parole greche: κρυπτóς (kryptós) che significa "nascosto", e γραφία (graphía) che significa "scrittura") è la branca della crittologia che tratta delle "scritture nascoste", ovvero dei metodi per rendere un messaggio "offuscato" in modo da non essere comprensibile/intelligibile a persone non autorizzate a leggerlo.</p>
-        <img src="https://cdn.pixabay.com/photo/2016/10/12/11/17/global-security-1734189_960_720.jpg" style="width:90%">
+        <img alt="schema sulla sicurezza globale" src="./global-security-1734189_1280.jpg" style="width:90%">
         <BR>
         <BR>
         <form action="pagepc.php" method="POST">
-          Inserisci il nome: <input type="textbox" name="n">
+          Inserisci il nome: <input type="text" name="n">
+          Inserisci email: <input type="email" name="e">
           <p>Commento: <textarea name="comment" rows="10" cols="30">
             Inserire qui il tuo commento
           </textarea></p>
