@@ -56,10 +56,17 @@ https://atom.io/packages/atom-bootstrap4 -->
         <BR>
         <BR>
         <form action="pagepc.php" method="POST">
-          Inserisci il nome: <input type="text" name="n">
-          Inserisci email: <input type="email" name="e">
-          <p>Commento: <textarea name="comment" rows="10" cols="30">
-            Inserire qui il tuo commento
+          <fieldset class="form-group">
+            <label for="exampleInputText1">Inserisci il nome</label>
+            <input type="text" required="required" class="form-control" name="n" id="exampleInputText1" placeholder="Inserisci il nome">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="exampleInputEmail1">Inserisci email</label>
+            <input type="email" class="form-control" name="hisemail" id="exampleInputEmail1" placeholder="Enter email">
+            <small class="text-muted">Non condivideremo la tua email con altri.</small>
+          </fieldset>
+
+          <p>Commento: <textarea name="hiscomment" rows="10" cols="30" required="required">
           </textarea></p>
           <p><input type="submit"></p>
         </form>
