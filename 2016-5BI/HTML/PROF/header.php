@@ -19,54 +19,22 @@ https://atom.io/packages/atom-bootstrap4 -->
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css">
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <style type="text/css">
-    .navbar-fixed-top {
-      background-color: inherit;
-      
-    }
-    </style>
+    <link rel="stylesheet" href="static/css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <span class="navbar-brand">La mia prima pagina</span>
       <ul class="nav nav-pills">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.php">Contact</a>
         </li>
       </ul>
     </nav>
 
     <div class="container">
-
-      <div class="starter-template">
-        <h1>Il mio primo esperimento di HTML</h1>
-
-      </div>
-      <p class="lead">Questo sito conterrà 3 pagine:</p>
-      <ul>
-        <li>index.html: la home page (o landing page)</li>
-        <li>about.html: informazioni su di me</li>
-        <li>contact.html: una form per contattarmi</li>
-      </ul>
-      <p class="lead">E i seguenti elementi:</p>
-      <ul>
-        <li>immagini</li>
-        <li>elenchi puntati non ordinati</li>
-        <li>link a risorse esterne (URL) e interne (path relativi e assoluti)</li>
-        <li>form</li>
-      </ul>
-
-    </div><!-- /.container -->
-
-    <!-- jQuery first, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-  </body>
-</html>

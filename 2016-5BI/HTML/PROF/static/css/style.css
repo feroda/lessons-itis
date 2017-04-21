@@ -1,0 +1,12 @@
+.caption {
+  font-style: italic;
+  text-align: center;
+}
+.code {
+  font-family: monospace;
+  font-style: normal;
+}
+.navbar-fixed-top {
+  background-color: inherit;
+
+}
