@@ -42,7 +42,7 @@ https://atom.io/packages/atom-bootstrap4 -->
           <a class="nav-link" href="Crittografia_Asimmetrica.html">ASIMMETRICA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
     </nav>
@@ -50,9 +50,23 @@ https://atom.io/packages/atom-bootstrap4 -->
     <div class="container">
 
       <div class="starter-template">
-        <h1 class="rosso">LA CRITTOGRAFIA</h1>
-        <p class="lead grande">La crittografia (dall'unione di due parole greche: κρυπτóς (kryptós) che significa "nascosto", e γραφία (graphía) che significa "scrittura") è la branca della crittologia che tratta delle "scritture nascoste", ovvero dei metodi per rendere un messaggio "offuscato" in modo da non essere comprensibile/intelligibile a persone non autorizzate a leggerlo.</p>
-        <img alt="schema sulla sicurezza globale" src="./global-security-1734189_1280.jpg" style="width:90%">
+        <h1 class="rosso">Contattami</h1>
+        
+        <form action="pagepc.php" method="POST">
+          <fieldset class="form-group">
+            <label for="exampleInputText1">Inserisci il nome</label>
+            <input type="text" required="required" class="form-control" name="n" id="exampleInputText1" placeholder="Inserisci il nome">
+          </fieldset>
+          <fieldset class="form-group">
+            <label for="exampleInputEmail1">Inserisci email</label>
+            <input type="email" class="form-control" name="hisemail" id="exampleInputEmail1" placeholder="Enter email">
+            <small class="text-muted">Non condivideremo la tua email con altri.</small>
+          </fieldset>
+
+          <p>Commento: <textarea name="hiscomment" rows="10" cols="30" required="required">
+          </textarea></p>
+          <p><input type="submit"></p>
+        </form>
       </div>
 
     </div>
