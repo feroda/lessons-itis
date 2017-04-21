@@ -7,9 +7,9 @@
       </div>
       <p class="lead">Questo sito conterrà 3 pagine:</p>
       <ul>
-        <li>index.html: la home page (o landing page)</li>
-        <li>about.html: informazioni su di me</li>
-        <li>contact.html: una form per contattarmi</li>
+        <li>index.php: la home page (o landing page)</li>
+        <li>about.php: informazioni su di me</li>
+        <li>contact.php: una form per contattarmi</li>
       </ul>
       <p class="lead">E i seguenti elementi:</p>
       <ul>
