@@ -66,6 +66,8 @@ IMPORTANTE: la funzione `session_start()` è utilizzata come prima funzione del 
 Per mercoledì 26 aprile:
 
 * effettuare in locale il deploy del sito https://github.com/feroda/lessons-itis/tree/master/2016-5BI/PHP/PROF
+* verificare che funzionino le parti di inclusione, form e gestione, autenticazione, pagina segreta.
+* identificare (indicativamente) le parti di codice che svolgono tali funzioni
 
 Per sabato 29 aprile:
 
