@@ -1,3 +1,15 @@
+<?php
+// avvio una nuova sessione o recupero quella esistente
+// deve essere fatto prima del codice <html>
+session_start();
+
+function mydebug($v) {
+    echo "<pre>";
+    print_r($v);
+    echo "</pre>";
+}
+?>
+
 <!DOCTYPE html>
 <!-- pagina creata con la scorciatoia htmlst
 dell'estensione atom-bootstrap4 di Atom.
@@ -33,6 +45,20 @@ https://atom.io/packages/atom-bootstrap4 -->
         </li>
         <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
+        </li>
+        <li class="nav-item">
+            <?php
+              if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+            ?>
+            <a class="nav-link" href="login.php">Entra</a>
+            <?php
+              } else {
+             ?>
+            <a class="nav-link" href="logout.php"><?php echo "Ciao ".$_SESSION["login"]." -&gt; Esci" ?></a>
+            <?php } ?>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="secretzone.php">Zona segreta</a>
         </li>
       </ul>
     </nav>

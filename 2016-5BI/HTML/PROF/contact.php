@@ -1,12 +1,6 @@
 <?php
 require "header.php";
 
-function mydebug($v) {
-    echo "<pre>";
-    print_r($v);
-    echo "</pre>";
-}
-
 function sanitize_mydata($data) {
 
     $errors = array("_has_errors" => false);
