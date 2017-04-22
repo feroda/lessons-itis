@@ -31,21 +31,30 @@ Per quello che riguarda la parte client abbiamo invece:
 
 ## Riferimenti per lo studio
 
-**LINGUA INGLESE o ITALIANA**
+#### LINGUA INGLESE o ITALIANA
+
 È fortemente consigliato di studiare il materiale in inglese.
 Se è necessaria la traduzione in italiano usare il traduttore integrato nel proprio browser,
-oppure inserire nel browser l'URL 
+oppure inserire nel browser l'URL
 
 `https://translate.google.com/translate?sl=en&tl=it&js=y&u=<URL DA TRADURRE>`
 
 ### Direttiva require
 
-to be done...
+include e require sono 2 direttive simili in php per includere files esterni:
+in cosa differiscono?
+
+* W3Schools PHP include: https://www.w3schools.com/php/php_includes.asp
+
+### Gestione forms in PHP
+
+* W3Schools PHP Forms Handling https://www.w3schools.com/php/php_forms.asp
+* W3Schools PHP Forms Validation, solo la sezione "Validate Form Data With PHP" https://www.w3schools.com/php/php_form_validation.asp
 
 ### Sessioni PHP e autenticazione
 
 * W3schools PHP sessions: https://www.w3schools.com/php/php_sessions.asp
-* Esempio di utilizzo sessioni http://php.net/manual/en/session.examples.basic.php
+* Esempio generico di utilizzo sessioni http://php.net/manual/en/session.examples.basic.php
 * Funzione `session_start()` http://php.net/manual/en/function.session-start.php
 
 Il codice che fa utilizzo delle sessioni per l'autenticazione si trova su
