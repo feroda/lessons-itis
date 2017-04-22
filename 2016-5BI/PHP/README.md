@@ -67,10 +67,11 @@ Per mercoledì 26 aprile:
 
 * effettuare in locale il deploy del sito https://github.com/feroda/lessons-itis/tree/master/2016-5BI/PHP/PROF
 * verificare che funzionino le parti di inclusione, form e gestione, autenticazione, pagina segreta.
-* identificare (indicativamente) le parti di codice che svolgono tali funzioni
+* (se si studia per se stessi) identificare (fin da ora) le parti di codice che svolgono tali funzioni
 
 Per sabato 29 aprile:
 
+* identificare le parti di codice che svoglono le funzioni verificate per merc 26
 * (importante) in cosa differiscono le direttive `require` e `include`?
 * (importante) descrivi il processo di inserimento dati e gestione di una FORM HTML, evidenzianto per ogni passo l'attore che lo compie (client o server), nei casi:
   * la form sia presente nella pagina `contact.html` e la gestione dei dati avvenga in `pagepc.php`
