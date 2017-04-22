@@ -42,7 +42,6 @@ oppure inserire nel browser l'URL
 ### Direttiva require
 
 include e require sono 2 direttive simili in php per includere files esterni:
-in cosa differiscono?
 
 * W3Schools PHP include: https://www.w3schools.com/php/php_includes.asp
 
@@ -62,3 +61,19 @@ https://github.com/feroda/lessons-itis/blob/master/2016-5BI/PHP/PROF/login.php
 
 IMPORTANTE: la funzione `session_start()` è utilizzata come prima funzione del codice in `header.php`
 
+## Esercizi
+
+Per mercoledì 26 aprile:
+
+* effettuare in locale il deploy del sito https://github.com/feroda/lessons-itis/tree/master/2016-5BI/PHP/PROF
+
+Per sabato 29 aprile:
+
+* (importante) in cosa differiscono le direttive `require` e `include`?
+* (importante) descrivi il processo di inserimento dati e gestione di una FORM HTML, evidenzianto per ogni passo l'attore che lo compie (client o server), nei casi:
+  * la form sia presente nella pagina `contact.html` e la gestione dei dati avvenga in `pagepc.php`
+  * sia la gestione della form che la sua rappresentazione sia presente in un unico file `contact.php`
+
+* cos'è una sessione?
+* come viene gestita la verifica se l'utente è autenticato o meno con le sessioni in PHP?
+* come viene mantenuta l'associazione della sessione in corso tra il client e il server?
