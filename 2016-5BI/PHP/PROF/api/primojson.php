@@ -16,7 +16,7 @@ header('Content-type: application/json');
         'abitanti': 2000000
 }]";*/
 
-include "data.php";
+require "data.php";
 echo json_encode(get_data());
 
 

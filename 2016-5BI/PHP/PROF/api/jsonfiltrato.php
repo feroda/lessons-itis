@@ -2,18 +2,16 @@
 
 header('Content-type: application/json');
 
-include "data.php";
+require "data.php";
 
-$namelike=$_GET['name'];
-$result=array();
-
-if ($namelike) {
-
-    foreach(get_data() as $el) {
-        if (strpos(strtolower($el['nome']), strtolower($namelike)) !== false) {
-            array_push($result, $el);
-        }
-    }
+if (isset($_GET['name'])) {
+  $namelike=$_GET['name'];
+  $result=array();
+  foreach(get_data() as $el) {
+      if (strpos(strtolower($el['nome']), strtolower($namelike)) !== false) {
+          array_push($result, $el);
+      }
+  }
 } else {
     $result = get_data();
 }
