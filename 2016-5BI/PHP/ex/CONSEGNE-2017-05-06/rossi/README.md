@@ -25,6 +25,7 @@
     * ok struttura analoga ad index.php;
     * errori analogi ad index.php;
     * non funziona perche' assente il `session_start()` in header-1.php
+    * non redireziona su `index.php` (non mette l'header "Location")
 
 * index.php:
     * la echo tra i 2 "require" è sbagliata. Stampa un testo in mezzo alla `<head>` dell'HTML che sappiamo non viene visualizzata nel corpo della pagina
