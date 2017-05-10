@@ -1,5 +1,5 @@
 <?php
-  require("header1.php");
+  require "header1.php";
   $title="home";
   require 'header2.php';
   if (isset($_SESSION["username"]))

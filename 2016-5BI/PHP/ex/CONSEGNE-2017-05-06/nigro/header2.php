@@ -20,9 +20,9 @@
         <?php
         if (isset($_SESSION["username"]))
         {
-            echo "<a class='nav-link' href='logout.php'>esci</a>";
-        }else {
-          echo"<a class='nav-link' href='login.php'>Login</a>";
+          echo '<a class="nav-link" href="logout.php">esci</a>';
+        } else {
+          echo '<a class="nav-link" href="login.php">Login</a>';
         }
          ?>
 

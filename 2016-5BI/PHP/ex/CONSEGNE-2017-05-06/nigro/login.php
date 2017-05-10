@@ -1,8 +1,8 @@
 <?php
 
-require("header1.php");
+require "header1.php";
 $title="login";
-require 'header2.php';
+require "header2.php";
 if (isset($_SESSION["username"]))
 {
 	header('Location:index.php');

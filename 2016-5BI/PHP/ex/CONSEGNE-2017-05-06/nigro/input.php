@@ -1,7 +1,7 @@
 <?php
-require'header1.php';
+require 'header1.php';
 $title="input";
-require'header2.php';
+require 'header2.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
