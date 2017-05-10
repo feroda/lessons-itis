@@ -30,6 +30,10 @@
     <li class="nav-item active">
       <a class="nav-link" href="input.php">Contact</span></a>
     </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="stampaDB.php">mostra commenti</span></a>
+    </li>
+
   </ul>
 </nav>
 <div class="container">
