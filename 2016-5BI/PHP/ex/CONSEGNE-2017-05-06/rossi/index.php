@@ -1,7 +1,7 @@
 <?php
-  require("header1.php");
+  require("header-1.php");
   echo "HOME";
-  require("header2.php");
+  require("header-2.php");
 
   if(isset($_SESSION["username"]))
   {
