@@ -1,7 +1,7 @@
 <?php
-  require("header1.php")
-  echo "LOGOUT";
-  require("header2.php")
+  require "header1.php";
+  $pagetitle="LOGOUT";
+  require "header2.php"
 
   session_destroy();
 
