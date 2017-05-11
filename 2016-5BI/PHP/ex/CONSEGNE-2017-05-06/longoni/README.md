@@ -26,6 +26,7 @@ Di sicuro non hai assimilato alcuni meccanismi di base per inquadrare bene cosa 
     * OK -> verifica username e password e redirezione
     * Questo sempre considerando che non si vedra' nulla poiche' header2.php contiene `</html>`
     * OK -> form HTML con campi
+    * IDENTICO -> a quello di Coacci....non e' che e' il template di Bracaccini o alrti file? dove presi?
 
 * logout.php:
     * funzionante;
