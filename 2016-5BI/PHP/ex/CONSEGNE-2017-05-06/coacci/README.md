@@ -4,28 +4,24 @@
 
 * headerA.php:
     * doveva chiamarsi header-1.php
-    * SOLO bene i contenuto e il `session_start()` anche se dovrebbe andare proprio come prima riga;
+    * `session_start()` sarebbe meglio come prima riga;
+    * Il `<title>` spezzato a metà è abbastanza immanutenibile.
 
-* header2.php
+* headerB.php
     * doveva chiamarsi header-2.php
-    * ERRORE -> non include la visualizzazione variabile del `<title>`
-    * OK -> gestione campi
+    * OK -> gestione login
 
 * footer.php:
-    * rimasta una riga di debug (="Billy")
-    * per il resto ok
+    * ok
 
 * login.php:
     * OK -> form di login
 
 * logout.php:
     * funziona, ma cosa vuol dire quell'exit() prima dell'include del footer?
-    * errori analogi ad index.php;
-    * non funziona perche' assente il `session_start()` in header-1.php
-    * non redireziona su `index.php` (non mette l'header "Location")
 
 * index.php:
-    * ERRORE -> utilizzare require al posto di include ( sut tutti i file
+    * ERRORE -> utilizzare require al posto di include ( su tutti i file
     * NON BUONA -> strategia per mettere il titolo -> meglio utilizzare una variabile di supporto
 
 ## FASE 2
