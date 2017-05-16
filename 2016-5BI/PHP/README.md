@@ -1,4 +1,22 @@
-# La mia prima pagina PHP con FORM e AUTENTICAZIONE.
+# Contenuto della directory
+
+* **PROF**: directory cui si fa riferimento nel resto di questa pagina. C'è un sito con FORM e AUTENTICAZIONE. Prima realizzazione
+* **ripasso**: directory che contiene il ripasso fatto in classe sabato 13 maggio;
+* **ex**: esercitazione del 6 maggio, contiene directory
+  * [CONSEGNE-2017-05-06/](ex/CONSEGNE-2017-05-06/): con le consegne degli alunni e le correzioni nei singoli files README.md
+  * [CONSEGNE-2017-05-06/PROF](ex/CONSEGNE-2017-05-06/PROF) con risoluzione dell'esercitazione e piccoli miglioramenti:
+    * risposta HTTP 403 in caso di accesso non autorizzato
+    * tecnica di redirezionamento ad una pagina specifica dopo il login tramite parametro nella querystring
+* **sessions**: esperimenti su sessioni
+
+### Altro
+
+* **ex2**: esercitazione su interazione con database, non fatto in classe
+* **API-Monticelli**: consegna di Monticello di TPSIT, json con filtraggio canzoni
+* **CESARI**: revisione esercizio Cesari su login/logout
+
+
+# STUDIARE: La mia prima pagina PHP con FORM e AUTENTICAZIONE.
 
 Questa versione del sito è l'evoluzione di quella presente nella directory HTML
 e include le seguenti funzionalità:
