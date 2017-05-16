@@ -90,8 +90,8 @@ Per mercoledì 26 aprile:
 Per sabato 29 aprile:
 
 * identificare le parti di codice che svoglono le funzioni verificate per merc 26
-* (importante) in cosa differiscono le direttive `require` e `include`?
-* (importante) descrivi il processo di inserimento dati e gestione di una FORM HTML, evidenzianto per ogni passo l'attore che lo compie (client o server), nei casi:
+* in cosa differiscono le direttive `require` e `include`?
+* descrivi il processo di inserimento dati e gestione di una FORM HTML, evidenzianto per ogni passo l'attore che lo compie (client o server), nei casi:
   * la form sia presente nella pagina `contact.html` e la gestione dei dati avvenga in `pagepc.php`
   * sia la gestione della form che la sua rappresentazione sia presente in un unico file `contact.php`
 
