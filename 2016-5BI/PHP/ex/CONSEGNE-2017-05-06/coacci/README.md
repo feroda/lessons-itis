@@ -10,6 +10,7 @@
 * headerB.php
     * doveva chiamarsi header-2.php
     * OK -> gestione login
+    * buona la definizione della classe css "rosso", peccato che poi colori le scritte in blue. Confido sia fatto volutamente per prova.
 
 * footer.php:
     * ok
@@ -26,5 +27,12 @@
 
 ## FASE 2
 
-*assente*
+* input.php:
+    * ERRORE -> utilizzare `require` al posto di `include`
+    * OK FORM e verifica errori
+    * ERRORE -> non inserito il commento nella sessione (`$_SESSION`) per condividerlo con altre pagine
+    * imprecisione sul messaggio di errore
+    * buono l'utilizzo della classe css "rosso"
 
+* list.php:
+    * assente
