@@ -25,7 +25,7 @@
     * OK -> `session_start()`
     * OK -> `session_destroy()`
     * OK -> `header("Location`
-    * ERRORE -> exit: se fosse `exit()` sarebbe inutile perche' uscirebbe comunque, ma cosi senza parentesi e' un bug;
+    * INUTILE exit perche' esce comunque
 
 * login.php:
     * OK -> require e titolo
