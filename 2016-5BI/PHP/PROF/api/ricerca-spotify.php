@@ -1,8 +1,18 @@
 <?php
+    /* La documentazione della API REST spotify è all'URL
+     * https://developer.spotify.com/web-api/endpoint-reference/
+     * in particolare
+     * https://developer.spotify.com/web-api/get-albums-tracks/
+     */
     $filter="Rock";
     if (isset($_GET["keywords"])) {
         $kw=$_GET['keywords'];
         $filter=urlencode("$filter $kw");
+        // questa funzione effettua una richiesta GET ad un URL
+        // e restituisce il contenuto (in questo caso un testo json)
+        // Sito W3Schools - https://www.w3schools.com/php/func_filesystem_file_get_contents.asp
+        // Sito PHP - http://php.net/manual/en/function.file-get-contents.php
+        // nella documentazione di "file" c'è scritto che può essere usata per aprire URL
         $jsondata = file_get_contents("https://api.spotify.com/v1/search?q=$filter&type=track&market=IT");
         $spotifydata = json_decode($jsondata, true);
     };
@@ -10,17 +20,18 @@
 
 <html>
 <head>
-<title>Il sito del rock</title>
-<style type="text/css">
-.debug-info { display: none; }
-/*.debug-info { display: block; }*/
-</style>
+    <title>Il sito del rock</title>
+    <style type="text/css">
+        .debug-info { display: none; }
+        /*.debug-info { display: block; }*/
+    </style>
 </head>
 <body>
-<h1>Ricerca una canzone rock</h1>
-<form>
-Parole chiave: <input type="text" name="keywords" placeholder="Inserisci una canzone" value="<?php echo $kw ?>" />
-</form>
+    <h1>Ricerca una canzone rock</h1>
+    <form>
+        Parole chiave: <input type="text" name="keywords" placeholder="Inserisci una canzone" value="<?php echo $kw ?>" />
+    </form>
+
 <?php
 
     if (isset($spotifydata)) {
