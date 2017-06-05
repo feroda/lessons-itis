@@ -7,7 +7,7 @@ require "lib-http.php";
  * - spotify_do_search -> effettua una richiesta alla API di ricerca Spotify
  */
 
-function spotify_do_login($client_id, $client_secret) {
+function spotify_do_login($client_id, $client_secret, $debug=false) {
 
     /* Autenticazione alla Web API di Spotify
      * seguendo il flusso di autenticazione descritto all'URL
@@ -51,7 +51,7 @@ function spotify_do_login($client_id, $client_secret) {
     );
     $body = "grant_type=client_credentials";
 
-    $response = do_rest("POST", $url, $headers, $body);
+    $response = do_rest("POST", $url, $headers, $body, $debug);
 
     /* Come documentato all'url con il Client Workflow
      * la risposta è un JSON con i campi:

@@ -39,8 +39,11 @@ function do_rest($method, $url, $headers=NULL, $body=NULL,$debug=false) {
     // invia la richiesta alla Web API e aspetta la risposta
     $response = curl_exec($http_handle);
 
-    // DEBUG echo "\nResponse from REST API: \n";
-    // DEBUG print_r($response);
+    if ($debug === true) {
+        echo "\nResponse from REST API: \n";
+        print_r($response);
+        echo "\n\n";
+    }
     return $response;
 }
 
