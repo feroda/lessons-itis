@@ -1,0 +1,13 @@
+<?php
+
+require "lib-spotify.php";
+
+$client_id = "<inserisci qui il client_id>";
+$client_secret = "<inserisci qui il client_secret>";
+
+$response = spotify_do_login($client_id, $client_secret, true);
+
+echo "Token ottenuto: ";
+print_r($response);
+
+?>

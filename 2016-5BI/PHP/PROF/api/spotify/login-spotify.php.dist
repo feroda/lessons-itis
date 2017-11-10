@@ -1,0 +1,30 @@
+<?php
+    session_start();
+
+    require "lib-spotify.php";
+
+    $client_id = "<inserisci qui il client id>";
+    $client_secret = "<inserisci qui il client secret>";
+
+    /* Recupera il token di accesso e reindirizza alla pagina di ricerca
+     * (oppure presenta la pagina Home con le azioni possibili).
+     *
+     * Questo è un proof-of-concept, ottimizzazioni possibili:
+     * - la API spotify fornisce anche la durata di questo token ("expires_in"),
+     * si potrebbe memorizzare il timestamp della richiesta di autenticazione
+     * e rifarla solo se è scaduto il tempo.
+     */
+
+    $token = spotify_do_login($client_id, $client_secret);
+
+    // qui ci andrebbe un controllo degli errori
+    // che puo' essere gestito in diversi modi dalla libreria spotify_do_login
+    //
+    // Questa versione base mette il token ricevuto nella sessione.
+    $_SESSION["spotify_token"] = $token;
+
+    // ... e redirige l'utente alla pagina di ricerca
+    $search_url = "http://localhost/PROF/api/spotify/ricerca-spotify.php";
+    header("HTTP/1.1 302 Found");
+    header("Location: ".$search_url);
+?>
