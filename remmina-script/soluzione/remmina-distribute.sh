@@ -4,5 +4,6 @@ utenti="$(ls /home)"
 
 for user in $utenti; do
 
-	echo ciao > /home/$user/Scrivania/prova.txt
+	cp remoto.sh /home/$user/Scrivania/remoto.sh
+
 done
