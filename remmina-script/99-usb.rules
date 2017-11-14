@@ -1,1 +1,1 @@
-KERNEL=="sd[b-z]1", ACTION=="add", SUBSYSTEM=="block", SYMLINK="chiavetta-usb", RUN+="/bin/mount /dev/chiavetta-usb", MODE="0666"
+KERNEL=="sd[b-z]1", ACTION=="add", SUBSYSTEM=="block", SYMLINK="chiavetta-usb", RUN+="/usr/bin/sudo -u utente /bin/mount /dev/chiavetta-usb", MODE="0666"
