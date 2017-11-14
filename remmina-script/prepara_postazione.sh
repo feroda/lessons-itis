@@ -24,4 +24,4 @@ fi
 sed -e "s/10.2.60.100/$IP/g" VM.remmina > /home/utente/.remmina/VM-$IP.remmina
 chown utente:utente /home/utente/.remmina/VM-$IP.remmina
 
-echo "Fatto tutto: ora bisogna mettere 'remmina -c /home/utente/.remmina/VP-$IP.remmina' in autostart del sistema grafico"
+echo "Fatto tutto: ora bisogna mettere 'remmina -c /home/utente/.remmina/VM-$IP.remmina' in autostart del sistema grafico"
