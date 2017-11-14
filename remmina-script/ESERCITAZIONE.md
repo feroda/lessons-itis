@@ -18,10 +18,14 @@ L'obiettivo è di creare i file lanciatori di REMMINA sui desktop di tutti gli u
 
  1. Cambiare il contenuto di `remoto.sh` in modo che esegua `remmina -c remmina.conf` da scaricare su https://github.com/feroda/lessons-itis/blob/master/remmina-script/remmina.conf
 
- 2. Sostituire (v. sotto) per ogni IP la stringa 10.2.60.100 con l'IP specifico. 
+ 2. Copiare anche il file `remmina.conf` sul desktop di ogni utente
 
-**PER SOSTITUIRE**, usare il comando `sed` in questo modo:
+## FASE 3
 
-  `sed -i "s/10.2.60.100/$IP/g" remmina.conf`
+ 1. Per ogni IP creare un file di configurazione di remmina (`remmina-$IP.conf`) con l'IP interessato.
+    Per fare questo eseguire `sed "s/10.2.60.100/$IP/g" remmina.conf` e redirezionare l'output su `remmina-$IP.conf`
 
+ 2. In ogni file `remoto-$IP.sh` eseguire `remmina -c remmina-$IP.conf`
+
+ 3. Distribuire agli utenti con contorno di carote
 
