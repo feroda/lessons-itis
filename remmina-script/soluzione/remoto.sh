@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/bin/remmina
+/usr/bin/remmina -c VM.remmina
