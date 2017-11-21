@@ -22,10 +22,10 @@ L'obiettivo è di creare i file lanciatori di REMMINA sui desktop di tutti gli u
 
 ## FASE 3
 
- 1. Per ogni IP creare un file di configurazione di remmina (`remmina-$IP.conf`) con l'IP interessato.
-    Per fare questo eseguire `sed "s/10.2.60.100/$IP/g" VM.remmina` e redirezionare l'output su `remmina-$IP.conf`
+ 1. Per ogni IP creare un file di configurazione di remmina (`VM-$IP.remmina`) con l'IP interessato.
+    Per fare questo eseguire `sed "s/10.2.60.100/$IP/g" VM.remmina` e redirezionare l'output su `VM-$IP.remmina`
 
- 2. In ogni file `remoto-$IP.sh` eseguire `remmina -c remmina-$IP.conf`
+ 2. In ogni file `remoto-$IP.sh` eseguire `remmina -c VM-$IP.remmina`
 
  3. Distribuire agli utenti con contorno di carote
 
